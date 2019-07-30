@@ -5,11 +5,11 @@ ARG VCS_REF
 ARG VERSION
 
 LABEL \
-    org.label-schema.vendor="The Goofball - goofball222@gmail.com" \
-    org.label-schema.url="https://github.com/goofball222/pritunl" \
+    org.label-schema.vendor="Screencom - info@screencom.eu" \
+    org.label-schema.url="https://github.com/screencom/pritunl" \
     org.label-schema.name="Pritunl Server" \
     org.label-schema.version=$VERSION \
-    org.label-schema.vcs-url="https://github.com/goofball222/pritunl.git" \
+    org.label-schema.vcs-url="https://github.com/screencom/pritunl.git" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.license="Apache-2.0" \
@@ -19,7 +19,7 @@ ENV \
     DEBUG=false \
     GOPATH="/go" \
     GOCACHE=off \
-    PRITUNL_OPTS= \
+    PRITUNL_OPTS="" \
     REVERSE_PROXY=false
 
 WORKDIR /opt/pritunl

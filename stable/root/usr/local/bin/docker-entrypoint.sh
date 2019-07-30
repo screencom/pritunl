@@ -2,7 +2,7 @@
 
 # Init script for Pritunl Docker container
 # License: Apache-2.0
-# Github: https://github.com/goofball222/pritunl.git
+# Github: https://github.com/screencom/pritunl.git
 SCRIPT_VERSION="1.0.1"
 # Last updated date: 2018-08-22
 

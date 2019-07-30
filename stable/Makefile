@@ -1,9 +1,8 @@
 -include ../*.mk
 -include *.mk
 
-
-
-NS ?= goofball222
+NS ?= screencom
+REMOTE ?= registry.wherever.network:5000
 
 IMAGE_NAME ?= pritunl
 CONTAINER_NAME ?= pritunl
@@ -21,15 +20,9 @@ ifndef TAG
 TAG := $(notdir $(shell pwd))
 endif
 
-
-
 .PHONY: build shell debug run start stop rm rmi test clean
 
-
-
 default: build
-
-
 
 build:
 	docker build \
@@ -37,6 +30,17 @@ build:
 	--build-arg BUILD_DATE=$(BUILD_DATE) \
 	--build-arg VERSION=$(VERSION) \
 	-t $(NS)/$(IMAGE_NAME):$(TAG) .
+
+push:
+    -docker push $(NS)/$(IMAGE_NAME):$(TAG)
+
+deploy:
+	docker build \
+	--build-arg VCS_REF=$(VCS_REF) \
+	--build-arg BUILD_DATE=$(BUILD_DATE) \
+	--build-arg VERSION=$(VERSION) \
+	-t $(REMOTE)/$(NS)/$(IMAGE_NAME):$(TAG) .
+	-docker push $(REMOTE)/$(NS)/$(IMAGE_NAME):$(TAG)
 
 shell:
 	-docker run -it --rm --name $(CONTAINER_NAME)_$(CONTAINER_INSTANCE) $(PORTS) $(VOLUMES) $(OTHER) $(ENV) $(NS)/$(IMAGE_NAME):$(TAG) /bin/bash

@@ -1,11 +1,13 @@
-version: '3'
+version: "3.3"
 
 services:
   mongo:
     image: mongo:latest
-    container_name: pritunldb
+    container_name: mongo
     hostname: pritunldb
     network_mode: bridge
+    ports:
+      - 27017:27017
     volumes:
       - ./db:/data/db
 
@@ -26,5 +28,21 @@ services:
       - 443:443
       - 1194:1194
       - 1194:1194/udp
+      - 19031:19031
+      - 19031:19031/udp
+      - 19032:19032
+      - 19032:19032/udp
     environment:
       - TZ=UTC
+
+  web:
+    image: screencom/ubuntu:18.04
+    container_name: web
+    hostname: web
+    network_mode: bridge
+    privileged: true
+    ports:
+      - "2201:22"
+    volumes:
+      - ./web-entrypoint.sh:/entrypoint.sh
+    entrypoint: /entrypoint.sh

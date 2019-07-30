@@ -1,16 +1,16 @@
 # Pritunl Docker Container
 
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/goofball222/pritunl.svg)](https://hub.docker.com/r/goofball222/pritunl/) [![Docker Pulls](https://img.shields.io/docker/pulls/goofball222/pritunl.svg)](https://hub.docker.com/r/goofball222/pritunl/) [![Docker Stars](https://img.shields.io/docker/stars/goofball222/pritunl.svg)](https://hub.docker.com/r/goofball222/pritunl/) [![MB Layers](https://images.microbadger.com/badges/image/goofball222/pritunl.svg)](https://microbadger.com/images/goofball222/pritunl) [![MB Commit](https://images.microbadger.com/badges/commit/goofball222/pritunl.svg)](https://microbadger.com/images/goofball222/pritunl) [![MB License](https://images.microbadger.com/badges/license/goofball222/pritunl.svg)](https://microbadger.com/images/goofball222/pritunl)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/screencom/pritunl.svg)](https://hub.docker.com/r/screencom/pritunl/) [![Docker Pulls](https://img.shields.io/docker/pulls/screencom/pritunl.svg)](https://hub.docker.com/r/screencom/pritunl/) [![Docker Stars](https://img.shields.io/docker/stars/screencom/pritunl.svg)](https://hub.docker.com/r/screencom/pritunl/) [![MB Layers](https://images.microbadger.com/badges/image/screencom/pritunl.svg)](https://microbadger.com/images/screencom/pritunl) [![MB Commit](https://images.microbadger.com/badges/commit/screencom/pritunl.svg)](https://microbadger.com/images/screencom/pritunl) [![MB License](https://images.microbadger.com/badges/license/screencom/pritunl.svg)](https://microbadger.com/images/screencom/pritunl)
 
 ## Docker tags:
 | Tag | pritunl Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/pritunl/blob/master/stable/Dockerfile) | 1.29.2051.18 | Latest stable release | 2019-04-25 |
+| [latest](https://github.com/screencom/pritunl/blob/master/stable/Dockerfile) | 1.29.2051.18 | Latest stable release | 2019-04-25 |
 
 ---
 
-* [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/pritunl/blob/master/CHANGELOG.md)
-* [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/pritunl/issues)
+* [Recent changes, see: GitHub CHANGELOG.md](https://github.com/screencom/pritunl/blob/master/CHANGELOG.md)
+* [Report any bugs, issues or feature requests on GitHub](https://github.com/screencom/pritunl/issues)
 
 ---
 
@@ -47,7 +47,7 @@ services:
       - ./db:/data/db
 
   pritunl:
-    image: goofball222/pritunl:latest
+    image: screencom/pritunl:latest
     container_name: pritunl
     hostname: pritunl
     network_mode: bridge
@@ -87,7 +87,7 @@ services:
       - ./db:/data/db
 
   pritunl:
-    image: goofball222/pritunl:latest
+    image: screencom/pritunl:latest
     container_name: pritunl
     hostname: pritunl
     privileged: true
@@ -138,4 +138,4 @@ networks:
 | `PRITUNL_OPTS` | ***unset*** | Any additional custom run options for the container pritunl process
 
 [//]: # (Licensed under the Apache 2.0 license)
-[//]: # (Copyright 2018 The Goofball - goofball222@gmail.com)
+[//]: # (Copyright 2018 The Goofball - screencom@gmail.com)
